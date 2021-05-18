@@ -33,9 +33,8 @@ public class Gaze : MonoBehaviour
     //Cookies
     public GameObject Cookie1;
 
-    public GameObject Cookie2;
-
-    public GameObject Cookie3;
+    //Sons
+    public AudioSource PortaRanger;
 
     // Start is called before the first frame update
     void Start()
@@ -78,17 +77,9 @@ public class Gaze : MonoBehaviour
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 print("I'm looking at " + alvo.transform.name);
-            } //Porta
-            else if (alvo.transform.gameObject.CompareTag("Door"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
-
-                print("I'm looking at " + alvo.transform.name);
-
-                anim.SetBool("doorOpen", true);
-            } //Chave
-            else if (alvo.transform.gameObject.CompareTag("Key"))
+            } 
+            //Chave
+            if (alvo.transform.gameObject.CompareTag("Key"))
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
@@ -96,6 +87,8 @@ public class Gaze : MonoBehaviour
                 print("I'm looking at " + alvo.transform.name);
 
                 Key.SetActive(false);
+                anim.SetBool("doorOpen", true);
+                PortaRanger.Play();
             }
 
             //Globo
@@ -115,20 +108,9 @@ public class Gaze : MonoBehaviour
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
-
-                if (Cookie1)
-                {
-                    Cookie1.SetActive(false);
-                }
-                if (Cookie2)
-                {
-                    Cookie2.SetActive(false);
-                }
-                if (Cookie3)
-                {
-                    Cookie3.SetActive(false);
-                }
                 print("I'm looking at " + alvo.transform.name);
+
+                Cookie1.SetActive(false);
             }
             else
             {
