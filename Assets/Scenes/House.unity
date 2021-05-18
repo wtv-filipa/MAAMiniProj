@@ -3799,7 +3799,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1487336097}
+    m_TransformParent: {fileID: 296296100}
     m_Modifications:
     - target: {fileID: 165346132477762716, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
@@ -3814,42 +3814,57 @@ PrefabInstance:
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.24
+      value: -0.73499966
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.95
+      value: 1.8075161
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.650002
+      value: -1.1700001
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.20200706
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.9793841
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9793841
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.20200706
       objectReference: {fileID: 0}
     - target: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
         type: 3}
@@ -3883,12 +3898,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 67fbeb7d5b71c48fcb3059da0c249f55, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51b36d7a6d737451b84db8ef5a9d7433, type: 3}
---- !u!4 &244781093 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4691209508614082317, guid: 51b36d7a6d737451b84db8ef5a9d7433,
-    type: 3}
-  m_PrefabInstance: {fileID: 244781092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &246011869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd,
@@ -6574,6 +6583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 10
   pointer: {fileID: 318161279}
+  Key: {fileID: 0}
+  Door: {fileID: 0}
   waitingTime: 3
 --- !u!20 &395985154 stripped
 Camera:
@@ -16189,6 +16200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 10
   pointer: {fileID: 2102183393}
+  Key: {fileID: 0}
+  Door: {fileID: 0}
   waitingTime: 3
 --- !u!20 &949415495 stripped
 Camera:
@@ -25152,7 +25165,6 @@ Transform:
   - {fileID: 938018164}
   - {fileID: 1609351492}
   - {fileID: 202382674}
-  - {fileID: 244781093}
   m_Father: {fileID: 1701093045}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34201,6 +34213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 10
   pointer: {fileID: 1236195312}
+  Key: {fileID: 0}
+  Door: {fileID: 0}
   waitingTime: 3
 --- !u!20 &2063705280 stripped
 Camera:
