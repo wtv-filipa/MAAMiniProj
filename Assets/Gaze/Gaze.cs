@@ -11,9 +11,17 @@ public class Gaze : MonoBehaviour
     public GameObject pointer;
     Vector3 pointerScale;
 
+    //Chave
+    public GameObject Key;
+
+    public GameObject Door;
+
     //Time
     float currentGazeTime = 0;
     public float waitingTime = 3.0f;
+
+    //Animações
+    Animator anim;
 
 
     // Start is called before the first frame update
@@ -21,6 +29,9 @@ public class Gaze : MonoBehaviour
     {
         cam = this.GetComponent<Camera>();
         pointerScale = pointer.transform.localScale;
+
+        //Animações
+        anim = Door.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,14 +52,41 @@ public class Gaze : MonoBehaviour
 
                 currentGazeTime += Time.deltaTime;
                 print("passou " + Mathf.Round(currentGazeTime) + "s"); if (currentGazeTime > waitingTime)
-                { SceneManager.LoadScene(alvo.transform.gameObject.name); }
+                {
+                    SceneManager.LoadScene(alvo.transform.gameObject.name);
+                }
             }
-            else if (alvo.transform.gameObject.CompareTag("Clock"))
+            else
+
+            //Relógio
+            if (alvo.transform.gameObject.CompareTag("Clock"))
             {
                 pointer.transform.localScale = Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 print("I'm looking at " + alvo.transform.name);
                
+            }
+            else
+
+            //Porta
+            if (alvo.transform.gameObject.CompareTag("Door"))
+            {
+                pointer.transform.localScale = Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+
+                print("I'm looking at " + alvo.transform.name);
+
+                anim.SetBool("doorOpen", true);
+            }
+            else
+
+            //Chave
+            if (alvo.transform.gameObject.CompareTag("Key"))
+            {
+                pointer.transform.localScale = Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+
+                print("I'm looking at " + alvo.transform.name);
+
+                Key.SetActive(false);
             }
 
             else
