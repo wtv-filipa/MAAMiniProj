@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - Key
   - Clock
+  - Globus
   layers:
   - Default
   - TransparentFX
