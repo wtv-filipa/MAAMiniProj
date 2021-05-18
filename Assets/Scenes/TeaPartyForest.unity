@@ -4373,6 +4373,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 722384619}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &207976570
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207976569}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3028e814921a1420c8b053cd5c8d2e47, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &207976572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24962,7 +24981,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ff97f9fbebf5442b3950831177199247,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.429829
+      value: 25.42983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ff97f9fbebf5442b3950831177199247,
         type: 3}

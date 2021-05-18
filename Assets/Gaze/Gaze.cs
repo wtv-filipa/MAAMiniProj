@@ -24,8 +24,12 @@ public class Gaze : MonoBehaviour
 
     public float waitingTime = 3.0f;
 
+    float KeyWaiting = 1.0f;
+
     //Animações
     Animator anim;
+
+    Animator keyAnim;
 
     //Globus
     public GameObject Globus;
@@ -44,6 +48,7 @@ public class Gaze : MonoBehaviour
 
         //Animações
         anim = Door.GetComponent<Animator>();
+        keyAnim = Key.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -77,7 +82,8 @@ public class Gaze : MonoBehaviour
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 print("I'm looking at " + alvo.transform.name);
-            } 
+            }
+
             //Chave
             if (alvo.transform.gameObject.CompareTag("Key"))
             {
@@ -86,9 +92,14 @@ public class Gaze : MonoBehaviour
 
                 print("I'm looking at " + alvo.transform.name);
 
-                Key.SetActive(false);
-                anim.SetBool("doorOpen", true);
-                PortaRanger.Play();
+                keyAnim.SetBool("PlayAnim", true);
+                currentGazeTime += Time.deltaTime;
+                if (currentGazeTime > KeyWaiting)
+                {
+                    Key.SetActive(false);
+                    anim.SetBool("doorOpen", true);
+                    PortaRanger.Play();
+                }
             }
 
             //Globo
