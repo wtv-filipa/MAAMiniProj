@@ -9,6 +9,7 @@ TagManager:
   - Clock
   - Door
   - Globus
+  - EatCookie
   layers:
   - Default
   - TransparentFX

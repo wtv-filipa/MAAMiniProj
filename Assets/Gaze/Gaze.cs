@@ -30,6 +30,13 @@ public class Gaze : MonoBehaviour
     //Globus
     public GameObject Globus;
 
+    //Cookies
+    public GameObject Cookie1;
+
+    public GameObject Cookie2;
+
+    public GameObject Cookie3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,17 +71,15 @@ public class Gaze : MonoBehaviour
                 {
                     SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
-            }
-            else //Relógio
-            if (alvo.transform.gameObject.CompareTag("Clock"))
+            } //Relógio
+            else if (alvo.transform.gameObject.CompareTag("Clock"))
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 print("I'm looking at " + alvo.transform.name);
-            }
-            else //Porta
-            if (alvo.transform.gameObject.CompareTag("Door"))
+            } //Porta
+            else if (alvo.transform.gameObject.CompareTag("Door"))
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
@@ -82,9 +87,8 @@ public class Gaze : MonoBehaviour
                 print("I'm looking at " + alvo.transform.name);
 
                 anim.SetBool("doorOpen", true);
-            }
-            else //Chave
-            if (alvo.transform.gameObject.CompareTag("Key"))
+            } //Chave
+            else if (alvo.transform.gameObject.CompareTag("Key"))
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
@@ -101,7 +105,30 @@ public class Gaze : MonoBehaviour
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 print("I'm looking at " + alvo.transform.name);
-                Globus.transform.Rotate(new Vector3(0, 0, 180) * Time.deltaTime);
+                Globus
+                    .transform
+                    .Rotate(new Vector3(0, 0, 180) * Time.deltaTime);
+            }
+
+            //Cookies
+            if (alvo.transform.gameObject.CompareTag("EatCookie"))
+            {
+                pointer.transform.localScale =
+                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+
+                if (Cookie1)
+                {
+                    Cookie1.SetActive(false);
+                }
+                if (Cookie2)
+                {
+                    Cookie2.SetActive(false);
+                }
+                if (Cookie3)
+                {
+                    Cookie3.SetActive(false);
+                }
+                print("I'm looking at " + alvo.transform.name);
             }
             else
             {
