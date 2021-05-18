@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gaze : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class Gaze : MonoBehaviour
     public float distance = 10.0f; 
     public GameObject pointer;
     Vector3 pointerScale;
+
+    //Time
+    float currentGazeTime = 0;
+    public float waitingTime = 3.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +38,19 @@ public class Gaze : MonoBehaviour
             print("I'm looking at " + alvo.transform.name);
             if (alvo.transform.gameObject.CompareTag("Interactable")) {
                 pointer.transform.localScale = Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+
+                currentGazeTime += Time.deltaTime;
+                print("passou " + Mathf.Round(currentGazeTime) + "s"); if (currentGazeTime > waitingTime)
+                { SceneManager.LoadScene(alvo.transform.gameObject.name); }
             }
+            else if (alvo.transform.gameObject.CompareTag("Clock"))
+            {
+                pointer.transform.localScale = Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+
+                print("I'm looking at " + alvo.transform.name);
+               
+            }
+
             else
             {
                 pointer.transform.localScale = pointerScale;
@@ -40,6 +58,8 @@ public class Gaze : MonoBehaviour
         }
         else { 
             print("I'm looking at nothing!");
+
+            currentGazeTime = 0;
         }
     }
 }

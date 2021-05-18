@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/EmptyForest.unity
+    guid: 1b78fd67b47ea40baa84001be03bf2bd
+  - enabled: 1
+    path: Assets/Scenes/TeaPartyForest.unity
+    guid: cf30df0d2bcc345f790e37c7297f3b02
   m_configObjects: {}
