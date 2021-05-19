@@ -25,8 +25,6 @@ public class Gaze : MonoBehaviour
 
     public GameObject HatterId;
 
-    public GameObject FadeScreen;
-
     public GameObject PlacaFim;
 
     public GameObject FumoChaleira;
