@@ -63,6 +63,10 @@ public class Gaze : MonoBehaviour
 
     public GameObject DayLight;
 
+    public GameObject Festa;
+
+    public GameObject Personagens;
+
     //Sons
     public AudioSource PortaRanger;
 
@@ -227,6 +231,8 @@ public class Gaze : MonoBehaviour
                     PlacaFim.SetActive(true);
                     RenderSettings.skybox = Anoitecer;
                     Destroy (DayLight);
+                    Destroy (Festa);
+                    Destroy (Personagens);
 
                     //Som ambiente mais baixo ao olhar para a carta
                     SomAmbiente.volume = som;

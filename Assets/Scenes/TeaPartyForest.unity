@@ -231,7 +231,7 @@ Transform:
   - {fileID: 1472248005}
   - {fileID: 55439727}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3536241
 GameObject:
@@ -1406,7 +1406,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 133, y: -3.1599731, z: 57.699997}
 --- !u!1001 &46798396
 PrefabInstance:
@@ -9034,7 +9034,7 @@ Transform:
   m_LocalScale: {x: 2.8255877, y: 2.8255868, z: 2.8255868}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177098643
 GameObject:
@@ -11733,7 +11733,7 @@ Transform:
   m_LocalScale: {x: 0.19500001, y: 0.19500001, z: 0.19500001}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &281404938
 GameObject:
@@ -12245,7 +12245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &302683940 stripped
 Transform:
@@ -19100,6 +19100,8 @@ MonoBehaviour:
   Dia: {fileID: 2100000, guid: 39cace2863926444a9a78daa8ae26413, type: 2}
   Anoitecer: {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
   DayLight: {fileID: 45805961}
+  Festa: {fileID: 1315868397}
+  Personagens: {fileID: 1166759680}
   PortaRanger: {fileID: 1438489597}
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
@@ -28650,7 +28652,7 @@ PrefabInstance:
     - target: {fileID: 2636886462863581468, guid: 1e2121035ffdc4c348b2fa9d74d3bf4c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2636886462863581468, guid: 1e2121035ffdc4c348b2fa9d74d3bf4c,
         type: 3}
@@ -30058,7 +30060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &674187122
 PrefabInstance:
@@ -34849,7 +34851,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &887863942 stripped
 Transform:
@@ -41655,6 +41657,8 @@ MonoBehaviour:
   Dia: {fileID: 2100000, guid: 39cace2863926444a9a78daa8ae26413, type: 2}
   Anoitecer: {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
   DayLight: {fileID: 45805961}
+  Festa: {fileID: 1315868397}
+  Personagens: {fileID: 1166759680}
   PortaRanger: {fileID: 1438489597}
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
@@ -41703,7 +41707,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &960715883 stripped
 Transform:
@@ -43748,7 +43752,7 @@ Transform:
   - {fileID: 651050006}
   - {fileID: 1332223997}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1058580800 stripped
 Transform:
@@ -46913,7 +46917,7 @@ Transform:
   - {fileID: 767110104}
   - {fileID: 376656887}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1168965722 stripped
 Transform:
@@ -47291,7 +47295,7 @@ RectTransform:
   m_Children:
   - {fileID: 216807909}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -48368,7 +48372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1232612608
 PrefabInstance:
@@ -48807,7 +48811,7 @@ Transform:
   - {fileID: 595222298}
   - {fileID: 198149211}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1233880745 stripped
 Transform:
@@ -50186,7 +50190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1303599214 stripped
 Transform:
@@ -50352,8 +50356,9 @@ Transform:
   - {fileID: 1422051455}
   - {fileID: 1767736281}
   - {fileID: 964026290}
+  - {fileID: 3684617050722635727}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1317728902
 GameObject:
@@ -56549,7 +56554,7 @@ Transform:
   - {fileID: 274050288}
   - {fileID: 1051051552}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1404057558 stripped
 Transform:
@@ -56804,7 +56809,7 @@ Transform:
   - {fileID: 945512096}
   - {fileID: 1478161380}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1422051454 stripped
 GameObject:
@@ -58726,7 +58731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1490295696
 PrefabInstance:
@@ -81410,7 +81415,7 @@ Transform:
   m_LocalScale: {x: 1.2857299, y: 1.2857299, z: 1.2857299}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1882063325
 Animator:
@@ -89884,6 +89889,8 @@ MonoBehaviour:
   Dia: {fileID: 2100000, guid: 39cace2863926444a9a78daa8ae26413, type: 2}
   Anoitecer: {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
   DayLight: {fileID: 45805961}
+  Festa: {fileID: 1315868397}
+  Personagens: {fileID: 1166759680}
   PortaRanger: {fileID: 1438489597}
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
@@ -93412,8 +93419,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4064976964465448309}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -27.31675, y: 0.29298687, z: 1.82}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.259285, y: 0.6363716, z: 6.0998287}
   m_LocalScale: {x: 4.7132106, y: 5.4739714, z: 4.7132106}
   m_Children:
   - {fileID: 7193220147755954608}
@@ -93427,7 +93434,7 @@ Transform:
   - {fileID: 2763796439353292200}
   - {fileID: 3283389767247635567}
   - {fileID: 4946859544074544095}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1315868398}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &3690509165245937489
