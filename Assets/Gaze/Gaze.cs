@@ -7,25 +7,40 @@ using UnityEngine.UI;
 public class Gaze : MonoBehaviour
 {
     Camera cam;
+
     public float distance = 10.0f;
+
     public GameObject pointer;
+
     Vector3 pointerScale;
 
     //Variáveis
     public GameObject Key;
+
+    public GameObject Key2;
+
     public GameObject Door;
+
     public GameObject HatterId;
+
     public GameObject FadeScreen;
+
+    public GameObject PlacaFim;
 
     //Time
     float currentGazeTime = 0;
+
     public float waitingTime = 3.0f;
+
     float KeyWaiting = 1.0f;
 
     //Animações
     Animator anim;
+
     Animator keyAnim;
+
     Animator hatterAnim;
+
     Animator fadeAnim;
 
     //Globus
@@ -39,14 +54,20 @@ public class Gaze : MonoBehaviour
 
     //Skybox
     public Material Dia;
+
     public Material Anoitecer;
+
     public GameObject DayLight;
 
     //Sons
     public AudioSource PortaRanger;
+
     public AudioSource AssobioBule;
+
     public AudioSource ComerCookie;
+
     public AudioSource Sussurro;
+
     bool hasPlayedDoor = false;
 
     // Start is called before the first frame update
@@ -80,6 +101,7 @@ public class Gaze : MonoBehaviour
                 alvo.transform.gameObject.CompareTag("DrinkMe") ||
                 alvo.transform.gameObject.CompareTag("Clock") ||
                 alvo.transform.gameObject.CompareTag("Key") ||
+                alvo.transform.gameObject.CompareTag("Key2") ||
                 alvo.transform.gameObject.CompareTag("Globus") ||
                 alvo.transform.gameObject.CompareTag("EatCookie") ||
                 alvo.transform.gameObject.CompareTag("Teapot") ||
@@ -90,7 +112,6 @@ public class Gaze : MonoBehaviour
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 currentGazeTime += Time.deltaTime;
-
 
                 //CENA INICIAL
                 if (
@@ -103,7 +124,6 @@ public class Gaze : MonoBehaviour
                     //SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
 
-
                 //PORTAL
                 if (
                     currentGazeTime > waitingTime &&
@@ -114,15 +134,11 @@ public class Gaze : MonoBehaviour
                     SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
 
-
-
                 //CLOCK
                 if (alvo.transform.gameObject.CompareTag("Clock"))
                 {
                     currentGazeTime = 0 + Time.deltaTime;
                 }
-
-
 
                 //KEY
                 if (alvo.transform.gameObject.CompareTag("Key"))
@@ -140,7 +156,17 @@ public class Gaze : MonoBehaviour
                     PortaRanger.Play();
                 }
 
-
+                //KEY2
+                if (
+                    currentGazeTime > KeyWaiting &&
+                    alvo.transform.gameObject.CompareTag("Key2")
+                )
+                {
+                    currentGazeTime = 0 + Time.deltaTime;
+                    Key2.SetActive(false);
+                    anim.SetBool("doorOpen", true);
+                    PortaRanger.Play();
+                }
 
                 //GLOBUS
                 if (alvo.transform.gameObject.CompareTag("Globus"))
@@ -150,16 +176,12 @@ public class Gaze : MonoBehaviour
                         .Rotate(new Vector3(0, 0, 180) * Time.deltaTime);
                 }
 
-
-
                 //COOKIES
                 if (alvo.transform.gameObject.CompareTag("EatCookie"))
                 {
                     Cookie1.SetActive(false);
                     ComerCookie.Play();
                 }
-
-
 
                 //TEAPOT
                 if (
@@ -175,8 +197,6 @@ public class Gaze : MonoBehaviour
                     }
                 }
 
-
-
                 //HATERID
                 if (alvo.transform.gameObject.CompareTag("HatterId"))
                 {
@@ -189,18 +209,20 @@ public class Gaze : MonoBehaviour
                     }
 
                     anim.SetBool("doorOpen", false);
-                    Key.SetActive(true);
+                    Key2.SetActive(true);
+
+                    PlacaFim.SetActive(true);
                     RenderSettings.skybox = Anoitecer;
-                    Destroy(DayLight);
+                    Destroy (DayLight);
                 }
             }
         }
         else
         {
             print("I'm looking at nothing!");
-            hatterAnim.SetBool("CloseUp", false);
             pointer.transform.localScale = pointerScale;
             currentGazeTime = 0;
+            hatterAnim.SetBool("CloseUp", false); //corrigir
         }
     }
 }

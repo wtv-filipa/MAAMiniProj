@@ -7,12 +7,12 @@ TagManager:
   - Interactable
   - Key
   - Clock
-  - Door
   - Globus
   - EatCookie
   - Teapot
   - HatterId
   - DrinkMe
+  - Key2
   layers:
   - Default
   - TransparentFX
