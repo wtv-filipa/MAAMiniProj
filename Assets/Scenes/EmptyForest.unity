@@ -13816,6 +13816,86 @@ PrefabInstance:
       propertyPath: m_Name
       value: WebXRCameraSet
       objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99144495
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000003473833
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.12843348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.023278138
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.34300002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 14.754001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 2.6460001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.968
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99144495
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000039988657
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.12843348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.023278145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.34300002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -14.754001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.6460001
+      objectReference: {fileID: 0}
     - target: {fileID: 4545079059221816, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
       propertyPath: m_RootOrder
       value: 0
