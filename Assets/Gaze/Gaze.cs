@@ -16,8 +16,8 @@ public class Gaze : MonoBehaviour
 
     //Chave
     public GameObject Key;
-
     public GameObject Door;
+    public GameObject HatterId;
 
     //Time
     float currentGazeTime = 0;
@@ -28,8 +28,8 @@ public class Gaze : MonoBehaviour
 
     //Animações
     Animator anim;
-
     Animator keyAnim;
+    Animator hatterAnim;
 
     //Globus
     public GameObject Globus;
@@ -37,18 +37,30 @@ public class Gaze : MonoBehaviour
     //Cookies
     public GameObject Cookie1;
 
+    //Fumo Bule
+    public GameObject SmokeTeaPot;
+
+    //Skybox
+    public Material Dia;
+    public Material Anoitecer;
+    public GameObject DayLight;
+
     //Sons
     public AudioSource PortaRanger;
+    public AudioSource AssobioBule;
 
     // Start is called before the first frame update
     void Start()
     {
+        //RenderSettings.skybox = Dia;
+
         cam = this.GetComponent<Camera>();
         pointerScale = pointer.transform.localScale;
 
         //Animações
         anim = Door.GetComponent<Animator>();
         keyAnim = Key.GetComponent<Animator>();
+        hatterAnim = HatterId.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -126,6 +138,43 @@ public class Gaze : MonoBehaviour
             else
             {
                 pointer.transform.localScale = pointerScale;
+            }
+
+            //Teapot
+            if (alvo.transform.gameObject.CompareTag("Teapot"))
+            {
+                pointer.transform.localScale =
+                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+                print("I'm looking at " + alvo.transform.name);
+
+                AssobioBule.Play();
+            }
+            else
+            {
+                pointer.transform.localScale = pointerScale;
+                AssobioBule.Stop();
+            }
+
+            //HatterId
+            if (alvo.transform.gameObject.CompareTag("HatterId"))
+            {
+                pointer.transform.localScale =
+                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
+                print("I'm looking at " + alvo.transform.name);
+
+                hatterAnim.SetBool("CloseUp", true);
+                anim.SetBool("doorOpen", false);
+                Key.SetActive(true);
+
+                RenderSettings.skybox = Anoitecer;
+
+                Destroy(DayLight);
+            }
+            else
+            {
+                pointer.transform.localScale = pointerScale;
+                hatterAnim.SetBool("CloseUp", false);
+
             }
         }
         else
