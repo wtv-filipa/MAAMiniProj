@@ -12,6 +12,7 @@ TagManager:
   - EatCookie
   - Teapot
   - HatterId
+  - DrinkMe
   layers:
   - Default
   - TransparentFX
