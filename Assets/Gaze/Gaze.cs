@@ -29,6 +29,8 @@ public class Gaze : MonoBehaviour
 
     public GameObject FumoChaleira;
 
+    public GameObject GoBackLobby;
+
     //Time
     float currentGazeTime = 0;
 
@@ -124,7 +126,8 @@ public class Gaze : MonoBehaviour
                 alvo.transform.gameObject.CompareTag("EatCookie") ||
                 alvo.transform.gameObject.CompareTag("Teapot") ||
                 alvo.transform.gameObject.CompareTag("HatterId")
-            )
+
+                )
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
@@ -138,8 +141,8 @@ public class Gaze : MonoBehaviour
                 )
                 {
                     currentGazeTime = 0 + Time.deltaTime;
-                    fadeAnim.SetBool("FadeOut", false);
-                    //SceneManager.LoadScene(alvo.transform.gameObject.name);
+                    //fadeAnim.SetBool("FadeOut", false);
+                    SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
 
                 //PORTAL
@@ -217,8 +220,6 @@ public class Gaze : MonoBehaviour
                 //HATERID
                 if (alvo.transform.gameObject.CompareTag("HatterId"))
                 {
-                    //hatterAnim.SetBool("CloseUp", true);
-                    //hatterAnim.SetBool("BackIntoPos", true);
                     if (!hasPlayedDoor)
                     {
                         Sussurro.Play();
@@ -229,14 +230,26 @@ public class Gaze : MonoBehaviour
                     Key2.SetActive(true);
 
                     PlacaFim.SetActive(true);
+                    GoBackLobby.SetActive(true);
                     RenderSettings.skybox = Anoitecer;
-                    Destroy (DayLight);
-                    Destroy (Festa);
-                    Destroy (Personagens);
+                    Destroy(DayLight);
+                    Destroy(Festa);
+                    Destroy(Personagens);
 
                     //Som ambiente mais baixo ao olhar para a carta
                     SomAmbiente.volume = som;
                     Vento.volume = som;
+                }
+
+                if (alvo.transform.gameObject.CompareTag("HatterId")){
+
+                    hatterAnim.SetBool("CloseUp", true);
+                }
+
+                if(!alvo.transform.gameObject.CompareTag("HatterId"))
+                {
+                    hatterAnim.SetBool("IntoPos", true);
+                    hatterAnim.SetBool("CloseUp", false);
                 }
             }
         }
@@ -245,8 +258,6 @@ public class Gaze : MonoBehaviour
             print("I'm looking at nothing!");
             pointer.transform.localScale = pointerScale;
             currentGazeTime = 0;
-
-            //hatterAnim.SetBool("BackIntoPos", false);
         }
     }
 }
