@@ -65984,7 +65984,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628654738}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0.21}
   m_LocalScale: {x: 0.10684, y: 0.10684, z: 0.10684}
   m_Children: []
   m_Father: {fileID: 995457850}
@@ -65992,7 +65992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.4, y: -2.01}
+  m_AnchoredPosition: {x: 0.17, y: -0.88}
   m_SizeDelta: {x: 263.8391, y: 68.47991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628654740
@@ -66016,8 +66016,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "S\xE3o horas de ir..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c202be277d8c4a4abacaeda15715359, type: 2}
+  m_sharedMaterial: {fileID: 1794509617274305579, guid: 0c202be277d8c4a4abacaeda15715359,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -66041,8 +66042,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.8
-  m_fontSizeBase: 23.8
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
