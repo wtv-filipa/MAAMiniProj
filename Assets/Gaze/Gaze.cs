@@ -43,14 +43,15 @@ public class Gaze : MonoBehaviour
 
     Animator fadeAnim;
 
+    //Animaçoes de brilhos
+    public GameObject ParticulaChave;
+    public GameObject LuzChave;
+
     //Globus
     public GameObject Globus;
 
     //Cookies
     public GameObject Cookie1;
-
-    //Fumo Bule
-    public GameObject SmokeTeaPot;
 
     //Skybox
     public Material Dia;
@@ -152,6 +153,7 @@ public class Gaze : MonoBehaviour
                 {
                     currentGazeTime = 0 + Time.deltaTime;
                     Key.SetActive(false);
+                    ParticulaChave.SetActive(false);
                     anim.SetBool("doorOpen", true);
                     PortaRanger.Play();
                 }
@@ -222,7 +224,11 @@ public class Gaze : MonoBehaviour
             print("I'm looking at nothing!");
             pointer.transform.localScale = pointerScale;
             currentGazeTime = 0;
-            hatterAnim.SetBool("CloseUp", false); //corrigir
+            hatterAnim.SetBool("CloseUp", false);
+            if (AssobioBule.isPlaying)
+            {
+                AssobioBule.Pause();
+            }
         }
     }
 }
