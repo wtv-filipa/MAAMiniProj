@@ -27,6 +27,8 @@ public class Gaze : MonoBehaviour
 
     public GameObject PlacaFim;
 
+    public GameObject FumoChaleira;
+
     //Time
     float currentGazeTime = 0;
 
@@ -45,6 +47,7 @@ public class Gaze : MonoBehaviour
 
     //Animaçoes de brilhos
     public GameObject ParticulaChave;
+
     public GameObject LuzChave;
 
     //Globus
@@ -69,13 +72,17 @@ public class Gaze : MonoBehaviour
 
     public AudioSource Sussurro;
 
-    bool hasPlayedDoor = false;
+    public AudioSource SomAmbiente;
 
+    public AudioSource Vento;
+
+    float som = 0.021f;
+
+    bool hasPlayedDoor = false;
 
     public float speed = 2;
 
     public Transform target;
-
 
     // Start is called before the first frame update
     void Start()
@@ -199,19 +206,15 @@ public class Gaze : MonoBehaviour
                 {
                     currentGazeTime = 0 + Time.deltaTime;
 
-                    if (!AssobioBule.isPlaying)
-                    {
-                        AssobioBule.Play();
-                    }
+                    FumoChaleira.SetActive(true);
+                    AssobioBule.Play();
                 }
 
-                
                 //HATERID
                 if (alvo.transform.gameObject.CompareTag("HatterId"))
                 {
                     //hatterAnim.SetBool("CloseUp", true);
                     //hatterAnim.SetBool("BackIntoPos", true);
-
                     if (!hasPlayedDoor)
                     {
                         Sussurro.Play();
@@ -224,6 +227,10 @@ public class Gaze : MonoBehaviour
                     PlacaFim.SetActive(true);
                     RenderSettings.skybox = Anoitecer;
                     Destroy (DayLight);
+
+                    //Som ambiente mais baixo ao olhar para a carta
+                    SomAmbiente.volume = som;
+                    Vento.volume = som;
                 }
             }
         }
@@ -234,11 +241,6 @@ public class Gaze : MonoBehaviour
             currentGazeTime = 0;
 
             //hatterAnim.SetBool("BackIntoPos", false);
-
-            if (AssobioBule.isPlaying)
-            {
-                AssobioBule.Pause();
-            }
         }
     }
 }

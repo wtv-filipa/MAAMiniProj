@@ -19091,6 +19091,7 @@ MonoBehaviour:
   HatterId: {fileID: 1279242458}
   FadeScreen: {fileID: 0}
   PlacaFim: {fileID: 417540701}
+  FumoChaleira: {fileID: 1819132728}
   waitingTime: 3
   ParticulaChave: {fileID: 1575651462}
   LuzChave: {fileID: 1231581526}
@@ -19103,6 +19104,8 @@ MonoBehaviour:
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
   Sussurro: {fileID: 1317728904}
+  SomAmbiente: {fileID: 173689293}
+  Vento: {fileID: 1472248006}
   speed: 2
   target: {fileID: 0}
 --- !u!20 &395985154 stripped
@@ -41643,6 +41646,7 @@ MonoBehaviour:
   HatterId: {fileID: 1279242458}
   FadeScreen: {fileID: 0}
   PlacaFim: {fileID: 417540701}
+  FumoChaleira: {fileID: 1819132728}
   waitingTime: 3
   ParticulaChave: {fileID: 1575651462}
   LuzChave: {fileID: 1231581526}
@@ -41655,6 +41659,8 @@ MonoBehaviour:
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
   Sussurro: {fileID: 1317728904}
+  SomAmbiente: {fileID: 173689293}
+  Vento: {fileID: 1472248006}
   speed: 2
   target: {fileID: 0}
 --- !u!20 &949415495 stripped
@@ -89868,6 +89874,7 @@ MonoBehaviour:
   HatterId: {fileID: 1279242458}
   FadeScreen: {fileID: 0}
   PlacaFim: {fileID: 417540701}
+  FumoChaleira: {fileID: 1819132728}
   waitingTime: 3
   ParticulaChave: {fileID: 1575651462}
   LuzChave: {fileID: 1231581526}
@@ -89880,6 +89887,8 @@ MonoBehaviour:
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
   Sussurro: {fileID: 1317728904}
+  SomAmbiente: {fileID: 173689293}
+  Vento: {fileID: 1472248006}
   speed: 2
   target: {fileID: 0}
 --- !u!20 &2063705280 stripped
