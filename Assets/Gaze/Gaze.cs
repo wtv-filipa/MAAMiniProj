@@ -14,6 +14,8 @@ public class Gaze : MonoBehaviour
 
     Vector3 pointerScale;
 
+
+
     //Variáveis
     public GameObject Key;
 
@@ -31,12 +33,16 @@ public class Gaze : MonoBehaviour
 
     public GameObject GoBackLobby;
 
+
+
     //Time
     float currentGazeTime = 0;
 
     public float waitingTime = 3.0f;
 
     float KeyWaiting = 1.0f;
+
+
 
     //Animações
     Animator anim;
@@ -45,7 +51,7 @@ public class Gaze : MonoBehaviour
 
     Animator hatterAnim;
 
-    Animator fadeAnim;
+
 
     //Animaçoes de brilhos
     public GameObject ParticulaChave;
@@ -69,6 +75,8 @@ public class Gaze : MonoBehaviour
 
     public GameObject Personagens;
 
+
+
     //Sons
     public AudioSource PortaRanger;
 
@@ -90,6 +98,8 @@ public class Gaze : MonoBehaviour
 
     public Transform target;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,8 +111,9 @@ public class Gaze : MonoBehaviour
         anim = Door.GetComponent<Animator>();
         keyAnim = Key.GetComponent<Animator>();
         hatterAnim = HatterId.GetComponent<Animator>();
-        fadeAnim = FadeScreen.GetComponent<Animator>();
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -134,6 +145,8 @@ public class Gaze : MonoBehaviour
 
                 currentGazeTime += Time.deltaTime;
 
+
+
                 //CENA INICIAL
                 if (
                     currentGazeTime > waitingTime &&
@@ -145,6 +158,8 @@ public class Gaze : MonoBehaviour
                     SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
 
+
+
                 //PORTAL
                 if (
                     currentGazeTime > waitingTime &&
@@ -155,11 +170,15 @@ public class Gaze : MonoBehaviour
                     SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
 
+
+
                 //CLOCK
                 if (alvo.transform.gameObject.CompareTag("Clock"))
                 {
                     currentGazeTime = 0 + Time.deltaTime;
                 }
+
+
 
                 //KEY
                 if (alvo.transform.gameObject.CompareTag("Key"))
@@ -173,12 +192,15 @@ public class Gaze : MonoBehaviour
                 {
                     currentGazeTime = 0 + Time.deltaTime;
                     Key.SetActive(false);
+                    LuzChave.SetActive(false);
                     ParticulaChave.SetActive(false);
                     anim.SetBool("doorOpen", true);
                     PortaRanger.Play();
                 }
 
-                //KEY2
+
+
+                //KEY2 - DENTRO DA CASA
                 if (
                     currentGazeTime > KeyWaiting &&
                     alvo.transform.gameObject.CompareTag("Key2")
@@ -190,6 +212,8 @@ public class Gaze : MonoBehaviour
                     PortaRanger.Play();
                 }
 
+
+
                 //GLOBUS
                 if (alvo.transform.gameObject.CompareTag("Globus"))
                 {
@@ -198,12 +222,16 @@ public class Gaze : MonoBehaviour
                         .Rotate(new Vector3(0, 0, 180) * Time.deltaTime);
                 }
 
+
+
                 //COOKIES
                 if (alvo.transform.gameObject.CompareTag("EatCookie"))
                 {
                     Cookie1.SetActive(false);
                     ComerCookie.Play();
                 }
+
+
 
                 //TEAPOT
                 if (
@@ -216,6 +244,8 @@ public class Gaze : MonoBehaviour
                     FumoChaleira.SetActive(true);
                     AssobioBule.Play();
                 }
+
+
 
                 //HATERID
                 if (alvo.transform.gameObject.CompareTag("HatterId"))
@@ -255,7 +285,7 @@ public class Gaze : MonoBehaviour
         }
         else
         {
-            print("I'm looking at nothing!");
+
             pointer.transform.localScale = pointerScale;
             currentGazeTime = 0;
         }
