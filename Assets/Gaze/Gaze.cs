@@ -7,29 +7,26 @@ using UnityEngine.UI;
 public class Gaze : MonoBehaviour
 {
     Camera cam;
-
     public float distance = 10.0f;
-
     public GameObject pointer;
-
     Vector3 pointerScale;
 
-    //Chave
+    //Variáveis
     public GameObject Key;
     public GameObject Door;
     public GameObject HatterId;
+    public GameObject FadeScreen;
 
     //Time
     float currentGazeTime = 0;
-
     public float waitingTime = 3.0f;
-
     float KeyWaiting = 1.0f;
 
     //Animações
     Animator anim;
     Animator keyAnim;
     Animator hatterAnim;
+    Animator fadeAnim;
 
     //Globus
     public GameObject Globus;
@@ -48,12 +45,14 @@ public class Gaze : MonoBehaviour
     //Sons
     public AudioSource PortaRanger;
     public AudioSource AssobioBule;
+    public AudioSource ComerCookie;
+    public AudioSource Sussurro;
+    bool hasPlayedDoor = false;
 
     // Start is called before the first frame update
     void Start()
     {
         //RenderSettings.skybox = Dia;
-
         cam = this.GetComponent<Camera>();
         pointerScale = pointer.transform.localScale;
 
@@ -61,6 +60,7 @@ public class Gaze : MonoBehaviour
         anim = Door.GetComponent<Animator>();
         keyAnim = Key.GetComponent<Animator>();
         hatterAnim = HatterId.GetComponent<Animator>();
+        fadeAnim = FadeScreen.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -75,112 +75,131 @@ public class Gaze : MonoBehaviour
 
         if (Physics.Raycast(raio, out alvo, distance))
         {
-            print("I'm looking at " + alvo.transform.name);
-            if (alvo.transform.gameObject.CompareTag("Interactable"))
+            if (
+                alvo.transform.gameObject.CompareTag("Interactable") ||
+                alvo.transform.gameObject.CompareTag("DrinkMe") ||
+                alvo.transform.gameObject.CompareTag("Clock") ||
+                alvo.transform.gameObject.CompareTag("Key") ||
+                alvo.transform.gameObject.CompareTag("Globus") ||
+                alvo.transform.gameObject.CompareTag("EatCookie") ||
+                alvo.transform.gameObject.CompareTag("Teapot") ||
+                alvo.transform.gameObject.CompareTag("HatterId")
+            )
             {
                 pointer.transform.localScale =
                     Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
                 currentGazeTime += Time.deltaTime;
-                print("passou " + Mathf.Round(currentGazeTime) + "s");
-                if (currentGazeTime > waitingTime)
+
+
+                //CENA INICIAL
+                if (
+                    currentGazeTime > waitingTime &&
+                    alvo.transform.gameObject.CompareTag("DrinkMe")
+                )
                 {
+                    currentGazeTime = 0 + Time.deltaTime;
+                    fadeAnim.SetBool("FadeOut", false);
+                    //SceneManager.LoadScene(alvo.transform.gameObject.name);
+                }
+
+
+                //PORTAL
+                if (
+                    currentGazeTime > waitingTime &&
+                    alvo.transform.gameObject.CompareTag("Interactable")
+                )
+                {
+                    currentGazeTime = 0 + Time.deltaTime;
                     SceneManager.LoadScene(alvo.transform.gameObject.name);
                 }
-            } //Relógio
-            else if (alvo.transform.gameObject.CompareTag("Clock"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
-                print("I'm looking at " + alvo.transform.name);
-            }
 
-            //Chave
-            if (alvo.transform.gameObject.CompareTag("Key"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
-                print("I'm looking at " + alvo.transform.name);
-
-                keyAnim.SetBool("PlayAnim", true);
-                currentGazeTime += Time.deltaTime;
-                if (currentGazeTime > KeyWaiting)
+                //CLOCK
+                if (alvo.transform.gameObject.CompareTag("Clock"))
                 {
+                    currentGazeTime = 0 + Time.deltaTime;
+                }
+
+
+
+                //KEY
+                if (alvo.transform.gameObject.CompareTag("Key"))
+                {
+                    keyAnim.SetBool("PlayAnim", true);
+                }
+                if (
+                    currentGazeTime > KeyWaiting &&
+                    alvo.transform.gameObject.CompareTag("Key")
+                )
+                {
+                    currentGazeTime = 0 + Time.deltaTime;
                     Key.SetActive(false);
                     anim.SetBool("doorOpen", true);
                     PortaRanger.Play();
                 }
-            }
 
-            //Globo
-            if (alvo.transform.gameObject.CompareTag("Globus"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
 
-                print("I'm looking at " + alvo.transform.name);
-                Globus
-                    .transform
-                    .Rotate(new Vector3(0, 0, 180) * Time.deltaTime);
-            }
 
-            //Cookies
-            if (alvo.transform.gameObject.CompareTag("EatCookie"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
-                print("I'm looking at " + alvo.transform.name);
+                //GLOBUS
+                if (alvo.transform.gameObject.CompareTag("Globus"))
+                {
+                    Globus
+                        .transform
+                        .Rotate(new Vector3(0, 0, 180) * Time.deltaTime);
+                }
 
-                Cookie1.SetActive(false);
-            }
-            else
-            {
-                pointer.transform.localScale = pointerScale;
-            }
 
-            //Teapot
-            if (alvo.transform.gameObject.CompareTag("Teapot"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
-                print("I'm looking at " + alvo.transform.name);
 
-                AssobioBule.Play();
-            }
-            else
-            {
-                pointer.transform.localScale = pointerScale;
-                AssobioBule.Stop();
-            }
+                //COOKIES
+                if (alvo.transform.gameObject.CompareTag("EatCookie"))
+                {
+                    Cookie1.SetActive(false);
+                    ComerCookie.Play();
+                }
 
-            //HatterId
-            if (alvo.transform.gameObject.CompareTag("HatterId"))
-            {
-                pointer.transform.localScale =
-                    Vector3.Lerp(pointerScale, pointerScale * 2, 1);
-                print("I'm looking at " + alvo.transform.name);
 
-                hatterAnim.SetBool("CloseUp", true);
-                anim.SetBool("doorOpen", false);
-                Key.SetActive(true);
 
-                RenderSettings.skybox = Anoitecer;
+                //TEAPOT
+                if (
+                    currentGazeTime > waitingTime &&
+                    alvo.transform.gameObject.CompareTag("Teapot")
+                )
+                {
+                    currentGazeTime = 0 + Time.deltaTime;
 
-                Destroy(DayLight);
-            }
-            else
-            {
-                pointer.transform.localScale = pointerScale;
-                hatterAnim.SetBool("CloseUp", false);
+                    if (!AssobioBule.isPlaying)
+                    {
+                        AssobioBule.Play();
+                    }
+                }
 
+
+
+                //HATERID
+                if (alvo.transform.gameObject.CompareTag("HatterId"))
+                {
+                    hatterAnim.SetBool("CloseUp", true);
+
+                    if (!hasPlayedDoor)
+                    {
+                        Sussurro.Play();
+                        hasPlayedDoor = true;
+                    }
+
+                    anim.SetBool("doorOpen", false);
+                    Key.SetActive(true);
+                    RenderSettings.skybox = Anoitecer;
+                    Destroy(DayLight);
+                }
             }
         }
         else
         {
             print("I'm looking at nothing!");
-
+            hatterAnim.SetBool("CloseUp", false);
+            pointer.transform.localScale = pointerScale;
             currentGazeTime = 0;
         }
     }
