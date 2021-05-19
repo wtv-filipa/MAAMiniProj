@@ -71,6 +71,12 @@ public class Gaze : MonoBehaviour
 
     bool hasPlayedDoor = false;
 
+
+    public float speed = 2;
+
+    public Transform target;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -199,10 +205,12 @@ public class Gaze : MonoBehaviour
                     }
                 }
 
+                
                 //HATERID
                 if (alvo.transform.gameObject.CompareTag("HatterId"))
                 {
-                    hatterAnim.SetBool("CloseUp", true);
+                    //hatterAnim.SetBool("CloseUp", true);
+                    //hatterAnim.SetBool("BackIntoPos", true);
 
                     if (!hasPlayedDoor)
                     {
@@ -224,7 +232,9 @@ public class Gaze : MonoBehaviour
             print("I'm looking at nothing!");
             pointer.transform.localScale = pointerScale;
             currentGazeTime = 0;
-            hatterAnim.SetBool("CloseUp", false);
+
+            //hatterAnim.SetBool("BackIntoPos", false);
+
             if (AssobioBule.isPlaying)
             {
                 AssobioBule.Pause();

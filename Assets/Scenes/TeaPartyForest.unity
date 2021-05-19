@@ -19103,6 +19103,8 @@ MonoBehaviour:
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
   Sussurro: {fileID: 1317728904}
+  speed: 2
+  target: {fileID: 0}
 --- !u!20 &395985154 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20572450475250664, guid: c61e4de741d37461e85f25866d1ebd31,
@@ -34010,6 +34012,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Globus
       objectReference: {fileID: 0}
+    - target: {fileID: 1211203393851990, guid: c19be864065a21f40a8be5cb682975bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1460170813112924, guid: c19be864065a21f40a8be5cb682975bb, type: 3}
       propertyPath: m_Name
       value: globus m
@@ -41487,15 +41493,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4545079059221816, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.88
+      value: -40.5
       objectReference: {fileID: 0}
     - target: {fileID: 4545079059221816, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.97
+      value: 10.59
       objectReference: {fileID: 0}
     - target: {fileID: 4545079059221816, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90.45
+      value: -57.38
       objectReference: {fileID: 0}
     - target: {fileID: 4545079059221816, guid: c61e4de741d37461e85f25866d1ebd31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41649,6 +41655,8 @@ MonoBehaviour:
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
   Sussurro: {fileID: 1317728904}
+  speed: 2
+  target: {fileID: 0}
 --- !u!20 &949415495 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20092747195267750, guid: c61e4de741d37461e85f25866d1ebd31,
@@ -89872,6 +89880,8 @@ MonoBehaviour:
   AssobioBule: {fileID: 55439728}
   ComerCookie: {fileID: 1903837544}
   Sussurro: {fileID: 1317728904}
+  speed: 2
+  target: {fileID: 0}
 --- !u!20 &2063705280 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20930522213222284, guid: c61e4de741d37461e85f25866d1ebd31,
