@@ -92,10 +92,6 @@ public class Gaze : MonoBehaviour
 
     bool hasPlayedDoor = false;
 
-    public float speed = 2;
-
-    public Transform target;
-
 
 
     // Start is called before the first frame update

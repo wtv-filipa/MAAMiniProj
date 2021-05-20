@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 2bd0047a8dca04cec86c9d4c51b91502,
+  m_LightingDataAsset: {fileID: 112000000, guid: c4d2fef198c4c45f2b4f6fecfd3ddab1,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -5823,7 +5823,6 @@ MonoBehaviour:
   Key2: {fileID: 0}
   Door: {fileID: 0}
   HatterId: {fileID: 0}
-  FadeScreen: {fileID: 0}
   PlacaFim: {fileID: 0}
   FumoChaleira: {fileID: 0}
   GoBackLobby: {fileID: 0}
@@ -5843,8 +5842,6 @@ MonoBehaviour:
   Sussurro: {fileID: 0}
   SomAmbiente: {fileID: 0}
   Vento: {fileID: 0}
-  speed: 2
-  target: {fileID: 0}
 --- !u!20 &395985154 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20572450475250664, guid: c61e4de741d37461e85f25866d1ebd31,
@@ -14204,7 +14201,6 @@ MonoBehaviour:
   Key2: {fileID: 0}
   Door: {fileID: 0}
   HatterId: {fileID: 0}
-  FadeScreen: {fileID: 1827407934}
   PlacaFim: {fileID: 0}
   FumoChaleira: {fileID: 0}
   GoBackLobby: {fileID: 0}
@@ -14224,8 +14220,6 @@ MonoBehaviour:
   Sussurro: {fileID: 0}
   SomAmbiente: {fileID: 0}
   Vento: {fileID: 0}
-  speed: 2
-  target: {fileID: 0}
 --- !u!4 &951275923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9,
@@ -29547,7 +29541,6 @@ MonoBehaviour:
   Key2: {fileID: 0}
   Door: {fileID: 0}
   HatterId: {fileID: 0}
-  FadeScreen: {fileID: 0}
   PlacaFim: {fileID: 0}
   FumoChaleira: {fileID: 0}
   GoBackLobby: {fileID: 0}
@@ -29567,8 +29560,6 @@ MonoBehaviour:
   Sussurro: {fileID: 0}
   SomAmbiente: {fileID: 0}
   Vento: {fileID: 0}
-  speed: 2
-  target: {fileID: 0}
 --- !u!20 &2063705280 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20930522213222284, guid: c61e4de741d37461e85f25866d1ebd31,
